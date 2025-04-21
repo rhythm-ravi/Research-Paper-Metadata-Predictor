@@ -2,12 +2,13 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Box, Typography, Button } from '@mui/material';
 // import './LandingSection.css'; // Add custom styles here
+import { Link as ScrollLink, Element } from 'react-scroll'; // For smooth scrolling
 
 const LandingSection = () => {
   return (
     <Box className="landing-section">
       {/* Section 1 */}
-      <Box sx={{ my: 6 }}>
+      <Box sx={{ my: 12 }}>
       <motion.div
         className="section"
         initial={{ opacity: 0, y: 50 }}
@@ -21,20 +22,27 @@ const LandingSection = () => {
         <Typography variant="h6" gutterBottom>
           Predict missing metadata, extract fields from JSON or PDFs, and generate abstracts for research papers.
         </Typography>
-        <Button
-          variant="contained"
-          color="primary"
-          size="large"
-          sx={{ mt: 2 }}
-          href="#features"
+        <ScrollLink
+            to="features-section"
+            smooth={true}
+            duration={1000}
+            style={{ textDecoration: 'none' }}
         >
-          Learn More
-        </Button>
+            <Button
+                variant="contained"
+                color="primary"
+                size="large"
+                sx={{ mt: 2 }}
+                href="#features"
+            >
+                Learn More
+            </Button>
+        </ScrollLink>
       </motion.div>
       </Box>
 
       {/* Section 2 */}
-      <Box sx={{ my: 6 }}>
+      <Box sx={{ my: 12 }}>
       <motion.div
         className="section"
         initial={{ opacity: 0, y: 50 }}
@@ -52,7 +60,7 @@ const LandingSection = () => {
       </Box>
 
       {/* Section 3 */}
-      <Box sx={{ my: 6 }}>
+      <Box sx={{ my: 12 }}>
       <motion.div
         className="section"
         initial={{ opacity: 0, y: 50 }}

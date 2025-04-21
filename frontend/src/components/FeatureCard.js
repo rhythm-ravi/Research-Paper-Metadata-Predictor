@@ -4,9 +4,9 @@ import { motion } from 'framer-motion';
 
 import { Link } from 'react-router-dom';
  
-const FeatureCard = ({ path, title, description, icon }) => {
+const FeatureCard = ({ name, link, navigate, onClick, title, description, icon }) => {
   return (
-    <Box sx={{ p: 2 }}>
+    <Box onClick={() => onClick(name, link, navigate)} style={{ textDecoration: 'none', display: 'block'}} sx={{ p: 2, cursor: 'pointer'}}>
     <motion.div
       whileHover={{ scale: 1.05 }}
     //   transition={{ type: 'spring', stiffness: 300 }}

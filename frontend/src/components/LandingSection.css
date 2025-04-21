@@ -1,0 +1,19 @@
+.landing-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    min-height: 120vh;
+    padding: 50px 20px;
+    background: linear-gradient(to bottom right, #ffffff, #f0f4ff);
+  }
+  
+  .section {
+    max-width: 800px;
+    text-align: center;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
