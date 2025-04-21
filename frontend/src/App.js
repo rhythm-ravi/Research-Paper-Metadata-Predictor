@@ -8,6 +8,7 @@ import { motion } from 'framer-motion';
 import './App.css';
 
 import FeatureCard from './components/FeatureCard.js';
+import LandingSection from './components/LandingPage.js';
 // Import other pages/components
 import SignIn from './components/SignIn.js';
 import MetadataForm from './components/MetadataForm.js';
@@ -40,54 +41,42 @@ function App() {
                 </AppBar>
 
                 {/* Landing section */}
-                <Box className="landing-section" sx={{ padding: '50px 0', textAlign: 'center' }}>
-                    <motion.div
-                        initial={{ opacity: 0, y: 50 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 1 }}
-                    >
-                        <Typography variant="h3" gutterBottom>
-                            Welcome to the Metadata Predictor
-                        </Typography>
-                        <Typography variant="h6" gutterBottom>
-                            Predict missing metadata, extract fields from JSON or PDFs, and generate abstracts for research papers.
-                        </Typography>
-                        <Button
-                            variant="contained"
-                            color="primary"
-                            size="large"
-                            sx={{ mt: 2 }}
-                            component={Link}
-                            to="/metadata-form"
-                        >
-                            Get Started
-                        </Button>
-                    </motion.div>
-                </Box>
+                <LandingSection />
 
                 {/* Features Section */}
                 <Box className="features-section" sx={{ background: '#f5f5f5', padding: '50px 20px' }}>
                     <Typography variant="h4" textAlign="center" gutterBottom>
                         Key Features
                     </Typography>
-                    <Grid container spacing={4} justifyContent="center">
-                        <Grid item xs={12} sm={6} md={4}>
+                    <Grid container spacing={4} justifyContent="center">    {/* 4*8=32px ie 16 on each side */}
+                        <Grid item xs={12} sm={6} md={4} sx={{ border: '1px solid red' }}>       {/**Based on a 12 column grid system */}
+                            {/* <Box sx={{ p: 2 }}> */}
                             <FeatureCard
                                 title="Predict Metadata"
                                 description="Automatically predict missing metadata fields for research papers."
+                                icon="📊"
                             />
+                            {/* </Box> */}
                         </Grid>
-                        <Grid item xs={12} sm={6} md={4}>
+
+                        <Grid item xs={12} sm={6} md={4} sx={{ border: '1px solid red' }}>
+                            {/* <Box sx={{ p: 2 }}> */}
                             <FeatureCard
                                 title="Extract Fields from JSON"
                                 description="Upload a JSON file, and we’ll extract and auto-fill the metadata fields."
+                                icon="📁"
                             />
+                            {/* </Box> */}
                         </Grid>
-                        <Grid item xs={12} sm={6} md={4}>
+
+                        <Grid item xs={12} sm={6} md={4} sx={{ border: '1px solid red' }}>
+                            {/* <Box sx={{ p: 2 }}> */}
                             <FeatureCard
                                 title="Generate Abstracts"
                                 description="Upload a PDF, and we’ll generate an abstract automatically."
+                                icon="📄"
                             />
+                            {/* </Box> */}
                         </Grid>
                     </Grid>
                 </Box>

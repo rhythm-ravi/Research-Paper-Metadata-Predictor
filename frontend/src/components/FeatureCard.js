@@ -2,24 +2,36 @@ import React from 'react';
 import { Box, Typography } from '@mui/material';
 import { motion } from 'framer-motion';
 
-const FeatureCard = ({ title, description }) => {
+import { Link } from 'react-router-dom';
+ 
+const FeatureCard = ({ path, title, description, icon }) => {
   return (
+    <Box sx={{ p: 2 }}>
     <motion.div
-        whileHover={{ scale: 1.1 }}
-        // transition={{ type: 'spring', stiffness: 300 }}
-        initial={{ opacity: 0, y: 50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.3 }}
+      whileHover={{ scale: 1.05 }}
+    //   transition={{ type: 'spring', stiffness: 300 }}
+      style={{
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        padding: '20px',
+        background: 'white',
+        borderRadius: '12px',
+        boxShadow: '0 4px 10px rgba(0, 0, 0, 0.1)',
+        height: '250px',
+        width: '100%',
+        textAlign: 'center',
+      }}
     >
-      <Box sx={{ padding: '20px', background: 'white', borderRadius: '8px' }}>
-        <Typography variant="h6" gutterBottom>
-          {title}
-        </Typography>
-        <Typography>
-          {description}
-        </Typography>
-      </Box>
+      <Box sx={{ fontSize: '3rem', marginBottom: '10px' }}>{icon}</Box>
+      <Typography variant="h6" gutterBottom>
+        {title}
+      </Typography>
+      <Typography>
+        {description}
+      </Typography>
     </motion.div>
+    </Box>
   );
 };
 
